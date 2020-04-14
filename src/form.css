@@ -1,0 +1,11 @@
+label {
+    display: block;
+}
+
+input, textarea {
+    width: 300px;
+}
+
+.red {
+    color: red;
+}
