@@ -1,11 +1,96 @@
+h1 {
+    margin-bottom: 0px;
+}
+
+p {
+    margin: 0 0 20px;
+    width: 300px;
+    display: inline-block;
+    font-size: 0.8rem;
+}
+
 label {
     display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 2px;
 }
 
 input, textarea {
     width: 300px;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0px 0px 0px 3px orange;
+    border: 1px solid transparent;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type="radio"] {
+    width: 30px;
+    height: 20px;
 }
 
 .red {
     color: red;
+}
+
+.form {
+    height: 100vh;
+    background: #ffbd00;
+    overflow: auto;
+}
+
+.usku-logo {
+    height: 200px;
+    box-shadow: 10px 10px 60px -5px black;
+    margin-top: 50px;
+}
+
+.loading {
+    width: 150px;
+}
+
+button {
+    color: #fab900;
+    padding: 10px;
+    width: 310px;
+    background: black;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.footer {
+    margin: 20px 0px;
+    font-size: 0.8rem;
+}
+
+.loading-overlay {
+    display: flex;
+    position: absolute;
+    background: #000000a6;
+    height: 100%;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s ease-in;
+    top: 0;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
 }
