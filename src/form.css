@@ -23,6 +23,7 @@ input, textarea {
     font-size: 1.1rem;
     border-radius: 5px;
     margin-bottom: 5px;
+    transition: all 0.1s;
 }
 
 input:focus, textarea:focus {
@@ -39,6 +40,10 @@ input[type="radio"] {
     height: 20px;
 }
 
+input:hover, textarea:hover {
+    background: #e8e8e8;
+}
+
 .red {
     color: red;
 }
@@ -53,6 +58,7 @@ input[type="radio"] {
     height: 200px;
     box-shadow: 10px 10px 60px -5px black;
     margin-top: 50px;
+    transition: all 0.2s linear;
 }
 
 .loading {
@@ -64,11 +70,18 @@ button {
     padding: 10px;
     width: 310px;
     background: black;
+    box-shadow: 10px 10px 40px -5px #000;
     border: none;
     text-transform: uppercase;
     font-weight: bold;
     margin-top: 20px;
     cursor: pointer;
+    transition: 0.3s all linear;
+}
+
+button:hover, .usku-logo:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 5px 5px 30px -5px #000;
 }
 
 .footer {
@@ -86,7 +99,7 @@ button {
     justify-content: center;
     visibility: hidden;
     opacity: 0;
-    transition: all 1s ease-in;
+    transition: all 2s ease-in;
     top: 0;
 }
 

@@ -124,7 +124,7 @@ const Form = () => {
                     <input onChange={(e) => setCost(e.target.value)} type="text" value={cost} />
                 </div>
                 <div className="input-container">
-                    <label className={(!pickupName && submitted) ? 'red' : ''}>Locaion / Store Name</label>
+                    <label className={(!pickupName && submitted) ? 'red' : ''}>Location / Store Name</label>
                     <input onChange={(e) => setPickupName(e.target.value)} type="text" value={pickupName} />
                 </div>
                 <div className="input-container">
