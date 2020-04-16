@@ -79,9 +79,14 @@ button {
     transition: 0.3s all linear;
 }
 
-button:hover, .usku-logo:hover {
+button:hover {
     transform: translate(2px, 2px);
     box-shadow: 5px 5px 30px -5px #000;
+}
+
+.usku-logo:hover {
+    transform: translate(4px, 4px) rotate(-7deg);
+    box-shadow: 2px 2px 20px -3px #000;
 }
 
 .footer {
