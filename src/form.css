@@ -17,7 +17,7 @@ label {
 }
 
 input, textarea {
-    width: 300px;
+    width: 400px;
     border: 1px solid black;
     padding: 5px;
     font-size: 1.1rem;
@@ -111,4 +111,10 @@ button:hover {
 .show {
     visibility: visible;
     opacity: 1;
+}
+
+@media (max-width: 567px) {
+    input, textarea {
+        width: 90%;
+    }
 }
