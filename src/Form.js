@@ -12,7 +12,7 @@ const Form = () => {
     const [deliveryAddress, setDeliveryAddress] = useState("");
     const [phone, setPhone] = useState("");
     const [item, setItem] = useState("");
-    const [prePurchase, setPrePurchase] = useState("");
+    const [prePurchase, setPrePurchase] = useState(false);
     const [cost, setCost] = useState("");
     const [pickupName, setPickupName] = useState("");
     const [pickupAddress, setPickupAddress] = useState("");
@@ -20,7 +20,7 @@ const Form = () => {
     const [formPage, setFormPage] = useState(true);
     const [orderPin, setOrderPin] = useState("");
 
-    const [prePurchaseSelected, setPrePurchaseSelected] = useState("");
+    const [prePurchaseSelected, setPrePurchaseSelected] = useState(false);
 
     const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
@@ -126,7 +126,7 @@ const Form = () => {
                         <input onClick={(e) => {setPrePurchase(true); setPrePurchaseSelected(true)}} type="radio" name="prePurchase" /> Yes
                         <input onClick={(e) => {setPrePurchase(false); setPrePurchaseSelected(true)}} type="radio" name="prePurchase" /> No
                     </div>
-                    <div style={!prePurchase ? {display: 'none'} : {display: 'block'}} className="input-container">
+                    <div style={prePurchaseSelected && !prePurchase ? {display: 'block'} : {display: 'none'}} className="input-container">
                         <label className={(!cost && !prePurchase && submitted) ? 'red' : ''}>What is the estimated price of product?</label>
                         <input onChange={(e) => setCost(e.target.value)} type="text" value={cost} />
                     </div>
