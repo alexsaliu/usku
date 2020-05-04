@@ -52,14 +52,31 @@ const Form = () => {
             }, 3000)
             const message = formatMessage();
             console.log(message);
-            fetch('https://hooks.slack.com/services/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', {
+            // fetch('https://hooks.slack.com/services/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', {
+            //     method: 'POST',
+            //     body: JSON.stringify({"text": message})
+            // })
+            fetch('http://35.247.188.77:5000/process', {
                 method: 'POST',
-                body: JSON.stringify({"text": message})
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    orderPin,
+                    name,
+                    deliveryAddress,
+                    phone,
+                    item,
+                    prePurchase,
+                    cost,
+                    pickupName,
+                    pickupAddress,
+                    details
+                })
             })
             .then((response) => response.json())
             .then((data) => {
               console.log('Success:', data);
             })
+            .catch(err => console.log("Error: ", err))
         }
     }
 
