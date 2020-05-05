@@ -119,8 +119,20 @@ button:hover {
     opacity: 1;
 }
 
+.checkbox {
+    display: flex;
+}
+
+.checkbox input {
+    width: 14px;
+    cursor: pointer;
+}
+
 @media (max-width: 567px) {
     input, textarea {
         width: 90%;
+    }
+    .checkbox {
+        width: 80%;
     }
 }
