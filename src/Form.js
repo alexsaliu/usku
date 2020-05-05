@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 // import socketIOClient from 'socket.io-client';
 import './form.css';
-
+// Assets
 import logo from './assets/usku_logo.png';
 import loading_gif from './assets/loading.gif';
 
@@ -57,28 +57,28 @@ const Form = () => {
             //     method: 'POST',
             //     body: JSON.stringify({"text": message})
             // })
-            // fetch('https://usku-delivery-server.herokuapp.com/process', {
-            //     method: 'POST',
-            //     headers: {'Content-Type': 'application/json'},
-            //     body: JSON.stringify({
-            //         orderPin,
-            //         name,
-            //         deliveryAddress,
-            //         phone,
-            //         item,
-            //         prePurchase,
-            //         cost,
-            //         pickupName,
-            //         pickupAddress,
-            //         details,
-            //         termsAccepted
-            //     })
-            // })
-            // .then((response) => response.json())
-            // .then((data) => {
-            //   console.log('Success:', data);
-            // })
-            // .catch(err => console.log("Error: ", err))
+            fetch('https://usku-delivery-server.herokuapp.com/process', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    orderPin,
+                    name,
+                    deliveryAddress,
+                    phone,
+                    item,
+                    prePurchase,
+                    cost,
+                    pickupName,
+                    pickupAddress,
+                    details,
+                    termsAccepted
+                })
+            })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log('Success:', data);
+            })
+            .catch(err => console.log("Error: ", err))
         }
     }
 
