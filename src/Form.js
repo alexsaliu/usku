@@ -56,7 +56,7 @@ const Form = () => {
             //     method: 'POST',
             //     body: JSON.stringify({"text": message})
             // })
-            fetch('http://35.247.188.77:5000/process', {
+            fetch('https://usku-delivery-server.herokuapp.com/process', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
