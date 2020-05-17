@@ -21,6 +21,10 @@ const Form = () => {
     const [orderPin, setOrderPin] = useState("");
     const [termsAccepted, setTermsAccepted] = useState(false);
 
+    const [email, setEmail] = useState("");
+    const [deliveryTime, setDeliveryTime] = useState("");
+    const [pickupTime, setPickupTime] = useState("");
+
     const [prePurchaseSelected, setPrePurchaseSelected] = useState(false);
 
     const [loading, setLoading] = useState(false);
@@ -64,13 +68,16 @@ const Form = () => {
                     orderPin,
                     name,
                     deliveryAddress,
+                    deliveryTime,
                     phone,
                     item,
                     prePurchase,
                     cost,
                     pickupName,
                     pickupAddress,
+                    pickupTime,
                     details,
+                    email,
                     termsAccepted
                 })
             })
@@ -98,8 +105,12 @@ const Form = () => {
             ${name}\n
             *Delivery Address:*
             ${deliveryAddress}\n
+            *Delivery Date and Time:*
+            ${deliveryTime}\n
             *Phone:*
             ${phone}\n
+            *Email Address*
+            ${email}\n
             *Item(s):*
             ${item}\n
             *Pre Purchased:*
@@ -110,6 +121,8 @@ const Form = () => {
             ${pickupName}\n
             *Pickup Address:*
             ${pickupAddress}\n
+            *Pickup Date and Time:*
+            ${pickupTime}\n
             *Delivery Instructions:*
             ${details}\n
         `
@@ -133,8 +146,16 @@ const Form = () => {
                         <input onChange={(e) => setDeliveryAddress(e.target.value)} type="text" value={deliveryAddress} placeholder="12 Example St, Box Hill 3128" />
                     </div>
                     <div className="input-container">
+                        <label className={(!deliveryTime && submitted) ? 'red' : ''}>Delivery Date and Time</label>
+                        <input onChange={(e) => setDeliveryTime(e.target.value)} type="text" value={deliveryTime} placeholder="15 June 2020 3.30PM" />
+                    </div>
+                    <div className="input-container">
                         <label className={(!phone && submitted) ? 'red' : ''}>Phone</label>
                         <input onChange={(e) => setPhone(e.target.value)} type="text" value={phone} placeholder="0412 345 678" />
+                    </div>
+                    <div className="input-container">
+                        <label className={(!email && submitted) ? 'red' : ''}>Email Address</label>
+                        <input onChange={(e) => setEmail(e.target.value)} type="text" value={email} placeholder="example@example.com" />
                     </div>
                     <div className="input-container">
                         <label className={(!item && submitted) ? 'red' : ''}>What would you like delivered?</label>
@@ -156,6 +177,10 @@ const Form = () => {
                     <div className="input-container">
                         <label className={(!pickupAddress && submitted) ? 'red' : ''}>Pickup Address</label>
                         <input onChange={(e) => setPickupAddress(e.target.value)} type="text" value={pickupAddress} placeholder="44 Example St, Box Hill 3128" />
+                    </div>
+                    <div className="input-container">
+                        <label className={(!pickupTime && submitted) ? 'red' : ''}>Pickup Date and Time</label>
+                        <input onChange={(e) => setPickupTime(e.target.value)} type="text" value={pickupTime} placeholder="Tomorrow 11am" />
                     </div>
                     <div className="input-container">
                         <label className={(!details && submitted) ? 'red' : ''}>Delivery Instructions</label>
